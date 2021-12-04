@@ -58,11 +58,11 @@ def man():
 
 @app.route('/RecomSys', methods=['POST'])
 def home():
-    fc_name = request.json['franc_name']
+    fc_name = request.args.get('franc_name')
     f_name = fc_name
 
     sim_name = find_simi_place(df, place_simi_co_sorted_ind, f_name, 1)
-    return sim_name.kakao_store_name
+    return str(sim_name.kakao_store_name)
 
 
 if __name__ == "__main__":
