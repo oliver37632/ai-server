@@ -51,7 +51,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def man():
-    return render_template('home.html')
+    return {
+        "message": "tlqkf"
+    }
 
 
 @app.route('/RecomSys', methods=['POST'])
