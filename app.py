@@ -62,7 +62,7 @@ def home():
     f_name = fc_name
 
     sim_name = find_simi_place(df, place_simi_co_sorted_ind, f_name, 3)
-    return jsonify(sim_name.kakao_store_name)
+    return str(sim_name.kakao_store_name)
 
 
 if __name__ == "__main__":
