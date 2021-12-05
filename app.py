@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from flask import Flask, render_template, request
+from flask import Flask, request, jsonify
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -61,8 +61,8 @@ def home():
     fc_name = request.args.get('franc_name')
     f_name = fc_name
 
-    sim_name = find_simi_place(df, place_simi_co_sorted_ind, f_name, 1)
-    return str(sim_name.kakao_store_name)
+    sim_name = find_simi_place(df, place_simi_co_sorted_ind, f_name, 3)
+    return jsonify(sim_name.kakao_store_name)
 
 
 if __name__ == "__main__":
