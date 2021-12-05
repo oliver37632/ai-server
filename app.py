@@ -61,7 +61,7 @@ def home():
     fc_name = request.args.get('franc_name')
     f_name = fc_name
 
-    sim_name = find_simi_place(df, place_simi_co_sorted_ind, f_name, 3)
+    sim_name = find_simi_place(df, place_simi_co_sorted_ind, f_name, 1)
     return str(sim_name.kakao_store_name)
 
 
